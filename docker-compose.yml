@@ -1,5 +1,6 @@
 services:
     code-server:
+        platform: linux/amd64
         image: sarowar18/code-server:latest
         container_name: code-server
         environment:
@@ -21,6 +22,7 @@ services:
             - "4090:4090"
         restart: unless-stopped
     clone-server:
+        platform: linux/amd64
         image: sarowar18/clone-server:latest
         container_name: clone-server
         volumes:
