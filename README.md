@@ -63,7 +63,11 @@ EOF
 2. Set your `GITHUB_TOKEN` environment variable (optional, for private repos)
 3. Start the services:
    ```bash
-   docker-compose up -d
+   docker-compose up -d 
+   ```
+   or 
+   ```bash
+   docker compose up -d 
    ```
 4. Access code-server at `http://localhost:4080`
 
