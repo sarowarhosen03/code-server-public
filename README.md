@@ -10,8 +10,6 @@ Run this command to create `docker-compose.yml` and `code-server-config/config.y
 cat > docker-compose.yml << 'EOF'
 services:
     code-server:
-        # Platform auto-selected based on host architecture
-        # Multi-arch manifest automatically chooses amd64 or arm64
         image: sarowar18/code-server:latest
         container_name: code-server
         environment:
@@ -33,8 +31,6 @@ services:
             - "4090:4090"
         restart: unless-stopped
     clone-server:
-        # Platform auto-selected based on host architecture
-        # Multi-arch manifest automatically chooses amd64 or arm64
         image: sarowar18/clone-server:latest
         container_name: clone-server
         volumes:
@@ -52,8 +48,6 @@ services:
             - PORT_RANGE_START=4000
             - PORT_RANGE_END=4020
         restart: unless-stopped
-
-
 EOF
 mkdir -p code-server-config && cat > code-server-config/config.yaml << 'EOF'
 bind-addr: 0.0.0.0:4000
